@@ -9,7 +9,16 @@ def input_path():
 
 
 def create_dict(path):
-    pass  # 
+    for filename in os.listdir(path):
+        try:
+            path_to_file = os.path.join(path, filename)
+            if os.path.isdir(path_to_file):
+                create_dict(path_to_file)
+            else:
+                dictionary[path_to_file] = os.path.getsize(path_to_file)
+        except PermissionError:  # Ошибка доступа
+            pass
+    return dictionary 
 
 
 def analyze_dict(dictionary):
