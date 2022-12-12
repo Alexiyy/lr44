@@ -4,7 +4,8 @@ dictionary = {}
 
 
 def input_path():
-    pass  # 
+    path_to_directory = str(input('Введите путь к папке: '))
+    return path_to_directory
 
 
 def create_dict(path):
