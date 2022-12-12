@@ -16,7 +16,9 @@ def analyze_dict(dictionary):
 
 
 def duplicate_files(doubles):
-    pass #
+    for k, v in dict.items(doubles):
+        if v > 1:
+            print(k + ': ' + str(v))
 
 if __name__ == '__main__':
     duplicate_files(analyze_dict(create_dict(input_path())))
